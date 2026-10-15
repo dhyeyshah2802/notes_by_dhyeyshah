@@ -1,0 +1,735 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Class 10 Science notes by Dhyey Shah. PDF and printout. Order on WhatsApp.">
+<title>Notes by Dhyey Shah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600&display=swap" media="print" onload="this.media='all'">
+<style>
+/* Layout: a single science-notebook page. Graph-paper ground, a red margin rule, highlighter-orange emphasis, WhatsApp order buttons. */
+:root {
+  --bg: #f3f8fc;
+  --paper: #ffffff;
+  --grid: #d6e6f2;
+  --ink: #0d2a4a;
+  --ink-soft: #4a627c;
+  --blue: #1565c0;
+  --highlight: #ff9a1f;
+  --highlight-ink: #3a2100;
+  --margin: #e0524f;
+  --wa: #1fa855;
+  --wa-ink: #ffffff;
+  --line: #c9dbea;
+  --font-display: "Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
+  --font-body: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-hand: "Caveat", "Segoe Print", cursive;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0b1829; --paper: #11253b; --grid: #1a3350; --ink: #eaf3fb; --ink-soft: #9fb6cc;
+    --blue: #6cb2ff; --highlight: #ffb04a; --highlight-ink: #2b1700; --margin: #ff7a76;
+    --wa: #2bc06a; --wa-ink: #04210f; --line: #25405c; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0b1829; --paper: #11253b; --grid: #1a3350; --ink: #eaf3fb; --ink-soft: #9fb6cc;
+  --blue: #6cb2ff; --highlight: #ffb04a; --highlight-ink: #2b1700; --margin: #ff7a76;
+  --wa: #2bc06a; --wa-ink: #04210f; --line: #25405c; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.55;
+  padding-block: 20px 40px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 22px; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; line-height: 1.08; }
+p { margin: 0; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--highlight); outline-offset: 3px; }
+
+.sheet {
+  position: relative;
+  background: var(--paper);
+  border: 1.5px solid var(--line);
+  border-radius: 6px;
+  padding: 26px 22px 26px 40px;
+}
+.sheet::before {
+  content: ""; position: absolute; top: 0; bottom: 0; left: 24px; width: 2px;
+  background: var(--margin); opacity: .75;
+}
+
+/* top strip */
+.topbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.tag {
+  font-size: 12.5px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase;
+  color: var(--highlight-ink); background: var(--highlight);
+  padding: 6px 12px; border-radius: 4px;
+}
+.mini { font-family: var(--font-hand); font-size: 22px; color: var(--blue); }
+
+/* hero */
+.hero h1 { font-size: clamp(2.5rem, 11vw, 4.4rem); font-weight: 800; letter-spacing: -.02em; }
+.hero h1 .by { display: block; font-size: .36em; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 10px; }
+.hero .lead { margin-top: 18px; font-size: 1.2rem; max-width: 34ch; }
+.hl {
+  background: linear-gradient(transparent 55%, color-mix(in srgb, var(--highlight) 70%, transparent) 55%);
+  padding: 0 2px;
+}
+.cta-row { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 52px; padding: 12px 22px; border-radius: 8px;
+  font: 700 17px/1.2 var(--font-body); text-decoration: none; cursor: pointer;
+  background: var(--wa); color: var(--wa-ink); border: 2px solid var(--wa);
+}
+.btn:hover { filter: brightness(1.06); }
+.btn.ghost { background: transparent; color: var(--ink); border-color: var(--ink); }
+.btn svg { width: 22px; height: 22px; fill: currentColor; flex: none; }
+
+/* what's inside */
+.sheet h2 { font-size: clamp(1.6rem, 6vw, 2.1rem); font-weight: 700; }
+.sheet .sub { color: var(--ink-soft); margin-top: 6px; }
+.inside { list-style: none; margin: 20px 0 0; padding: 0; display: flex; flex-direction: column; }
+.inside li { padding: 13px 0; border-top: 1.5px dashed var(--line); display: grid; grid-template-columns: 34px 1fr; gap: 12px; align-items: start; min-width: 0; }
+.inside li:first-child { border-top: 0; }
+.tick { width: 26px; height: 26px; border-radius: 50%; background: var(--blue); display: grid; place-items: center; margin-top: 1px; }
+.tick svg { width: 14px; height: 14px; stroke: var(--paper); fill: none; stroke-width: 3; }
+.inside b { font-weight: 700; }
+.inside span.d { display: block; color: var(--ink-soft); font-size: 15.5px; }
+
+.formulas { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px 22px; padding: 14px 16px; border: 1.5px solid var(--line); border-radius: 6px; background: color-mix(in srgb, var(--grid) 35%, var(--paper)); }
+.formulas span { font-family: "Cambria Math", "STIX Two Math", Georgia, serif; font-size: 1.15rem; font-style: italic; }
+.formulas small { flex-basis: 100%; font-family: var(--font-hand); font-size: 20px; color: var(--blue); font-style: normal; }
+
+/* pricing */
+.plans { margin-top: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
+.plan { border: 2px solid var(--ink); border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 6px; min-width: 0; background: var(--paper); }
+.plan.pick { border-color: var(--highlight); box-shadow: 5px 5px 0 var(--highlight); }
+.plan .kind { font-size: 13px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--ink-soft); }
+.plan .price { font-family: var(--font-display); font-weight: 800; font-size: 3rem; line-height: 1; font-variant-numeric: tabular-nums; }
+.plan .price small { font-size: .45em; font-weight: 700; margin-right: 3px; vertical-align: .55em; }
+.plan p.d { color: var(--ink-soft); font-size: 15.5px; flex: 1; margin-bottom: 10px; }
+
+/* contact */
+.contact { text-align: left; }
+.contact .num { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.7rem, 8vw, 2.6rem); font-variant-numeric: tabular-nums; margin-top: 12px; letter-spacing: .01em; user-select: all; }
+.contact .cta-row { margin-top: 18px; }
+.note { color: var(--ink-soft); font-size: 14.5px; margin-top: 14px; }
+footer { text-align: center; color: var(--ink-soft); font-size: 14px; padding-top: 4px; }
+
+
+
+/* coupon */
+.coupon { margin-top: 20px; display: flex; flex-direction: column; gap: 8px; }
+.coupon label { font-weight: 700; }
+.coupon-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.coupon input {
+  flex: 1 1 180px; min-width: 0; min-height: 52px; padding: 10px 14px;
+  font: 700 17px/1.2 var(--font-body); letter-spacing: .08em; text-transform: uppercase;
+  background: var(--paper); color: var(--ink); border: 2px solid var(--ink); border-radius: 8px;
+}
+.coupon input::placeholder { text-transform: none; letter-spacing: 0; font-weight: 400; color: var(--ink-soft); }
+.coupon .btn { flex: 0 0 auto; }
+.coupon-msg { font-size: 15px; padding: 8px 12px; border-left: 4px solid var(--line); color: var(--ink-soft); }
+.coupon-msg.ok { border-left-color: var(--wa); color: var(--ink); font-weight: 700; background: color-mix(in srgb, var(--wa) 14%, transparent); }
+.coupon-msg.bad { border-left-color: var(--margin); color: var(--ink); font-weight: 700; background: color-mix(in srgb, var(--margin) 12%, transparent); }
+.plan .price { display: flex; align-items: baseline; flex-wrap: wrap; column-gap: 12px; }
+.plan .price .was { font-family: var(--font-body); font-weight: 500; font-size: 1.3rem; color: var(--ink-soft); }
+.plan .save { font-size: 14px; font-weight: 700; color: var(--highlight-ink); background: var(--highlight); align-self: flex-start; padding: 3px 9px; border-radius: 4px; }
+
+/* quiz */
+.qfs { border: 0; margin: 20px 0 0; padding: 0; min-width: 0; }
+.qfs legend { font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; line-height: 1.25; padding: 0; margin-bottom: 10px; }
+.opt { display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 10px 14px; margin-top: 8px; border: 2px solid var(--line); border-radius: 8px; background: var(--paper); cursor: pointer; }
+.opt input { width: 20px; height: 20px; flex: none; accent-color: var(--blue); margin: 0; }
+.opt:has(input:checked) { border-color: var(--blue); background: color-mix(in srgb, var(--blue) 10%, var(--paper)); }
+.opt:focus-within { outline: 3px solid var(--highlight); outline-offset: 2px; }
+#quiz-intro .btn, #quiz-form > .btn { margin-top: 20px; }
+#quiz-form .coupon-msg { margin-top: 20px; }
+#quiz-result h3 { font-size: 1.5rem; margin-top: 20px; }
+#quiz-result > p { margin-top: 6px; }
+.reward { margin-top: 18px; padding: 18px; border: 2px dashed var(--highlight); border-radius: 8px; display: flex; flex-direction: column; gap: 8px; }
+.reward-label { font-size: 13px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--ink-soft); }
+.reward code { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.25rem, 5.5vw, 1.8rem); letter-spacing: .02em; overflow-wrap: anywhere; user-select: all; }
+.reward .cta-row { margin-top: 6px; }
+.review { margin: 16px 0 0; padding: 0 0 0 20px; color: var(--ink-soft); font-size: 15.5px; display: flex; flex-direction: column; gap: 6px; }
+#retry { margin-top: 18px; }
+
+/* area notice */
+.area-note { margin: 0; text-align: center; font-size: 15px; font-weight: 700; line-height: 1.4; padding: 10px 14px; border-radius: 6px; text-wrap: balance; }
+.area-top { background: var(--highlight); color: var(--highlight-ink); }
+.area-bottom { background: var(--paper); color: var(--ink); border: 2px solid var(--ink); }
+
+/* gate page */
+.gate-sub { color: var(--ink-soft); margin-top: 14px; max-width: 40ch; }
+.gate-form { margin-top: 22px; display: flex; flex-direction: column; gap: 10px; }
+.gate-form label { font-weight: 700; }
+.gate-form input {
+  width: 100%; padding: 13px 14px;
+  font: 500 17px/1.3 var(--font-body);
+  background: var(--paper); color: var(--ink); border: 2px solid var(--ink); border-radius: 8px;
+}
+.gate-form input::placeholder { color: var(--ink-soft); font-weight: 400; }
+.gate-form input:focus-visible { outline: 3px solid var(--highlight); outline-offset: 2px; }
+.wrap { animation: pagein .18s ease-out; }
+@keyframes pagein { from { opacity: 0; } to { opacity: 1; } }
+.gate-form .btn { align-self: flex-start; }
+.sheet .decline { margin-top: 20px; padding: 14px 16px; border-left: 4px solid var(--margin); background: color-mix(in srgb, var(--margin) 12%, transparent); border-radius: 0 6px 6px 0; }
+.sheet .decline h2 { font-size: 1.25rem; }
+.decline p { margin-top: 6px; }
+.linkbtn { font: inherit; color: var(--blue); background: none; border: 0; padding: 4px 2px; text-decoration: underline; cursor: pointer; }
+
+@media (max-width: 420px) {
+  .sheet { padding: 22px 16px 22px 34px; }
+  .sheet::before { left: 20px; }
+  .btn { width: 100%; }
+  .coupon .btn { width: 100%; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .btn { transition: transform .15s ease, filter .15s ease; }
+  .btn:hover { transform: translateY(-2px); }
+}
+</style>
+<style>
+:root { color-scheme: light; }
+body { margin: 0; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<div class="wrap" id="page-gate">
+  <div class="topbar">
+    <span class="tag">Class 10 Science</span>
+    <span class="mini">one quick question</span>
+  </div>
+
+  <section class="sheet hero" aria-labelledby="gate-h">
+    <h1 id="gate-h"><span class="by">Class 10 Science notes</span>Notes by Dhyey Shah</h1>
+    <p class="lead">Where do you live?</p>
+    <p class="gate-sub">Our notes are only for students living in Bhavnagar, Gujarat. Type your city to continue.</p>
+    <div class="gate-form" id="gate-form">
+      <label for="city">Your city</label>
+      <input id="city" type="text" maxlength="60" autocomplete="off" placeholder="Type your city, e.g. Bhavnagar">
+      <p class="coupon-msg" id="gate-msg" role="status">We deliver only to students living in Bhavnagar.</p>
+      <button class="btn" id="gate-go" type="button">Continue</button>
+    </div>
+    <div class="decline" id="decline" role="alert" hidden>
+      <h2>Sorry, we can't take your order</h2>
+      <p>Notes by Dhyey Shah is available only for students living in Bhavnagar, Gujarat. Thank you for your interest.</p>
+    </div>
+  </section>
+</div>
+
+<div class="wrap" id="page-site" hidden>
+  <p class="area-note area-top">Only available for students living in Bhavnagar, Gujarat.</p>
+
+  <div class="topbar">
+    <span class="tag">Class 10 Science</span>
+    <span class="mini">exam season is here</span>
+  </div>
+
+  <header class="sheet hero">
+    <h1><span class="by">Class 10 Science notes</span>Notes by Dhyey Shah</h1>
+    <p class="lead">Short, clear notes for quick revision. <span class="hl">Revise faster. Score higher.</span></p>
+    <div class="cta-row">
+      <a class="btn wa-general" id="hero-order" href="https://wa.me/919427754096?text=Hi%2C%20I%20want%20the%20Class%2010%20Science%20notes." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H9l-5 4v-4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/></svg>
+        Order on WhatsApp
+      </a>
+      <a class="btn ghost" href="#prices">See prices</a>
+      <a class="btn ghost" href="#quiz">Win &#8377;50 off</a>
+    </div>
+  </header>
+
+
+
+  <section class="sheet" aria-labelledby="inside-h">
+    <h2 id="inside-h">What you get</h2>
+    <p class="sub">Study only what matters.</p>
+    <ul class="inside">
+      <li><span class="tick"><svg viewBox="0 0 16 16"><path d="M3 8.500l3.200 3L13 4.500"/></svg></span><div><b>Short, clear and easy to understand</b></div></li>
+      <li><span class="tick"><svg viewBox="0 0 16 16"><path d="M3 8.500l3.200 3L13 4.500"/></svg></span><div><b>All important chapters covered</b></div></li>
+      <li><span class="tick"><svg viewBox="0 0 16 16"><path d="M3 8.500l3.200 3L13 4.500"/></svg></span><div><b>Key diagrams, formulas and definitions</b></div></li>
+      <li><span class="tick"><svg viewBox="0 0 16 16"><path d="M3 8.500l3.200 3L13 4.500"/></svg></span><div><b>Last-minute revision points</b></div></li>
+      <li><span class="tick"><svg viewBox="0 0 16 16"><path d="M3 8.500l3.200 3L13 4.500"/></svg></span><div><b>Exam-focused</b><span class="d">Built around what the exam asks, so you skip the extra reading.</span></div></li>
+    </ul>
+    <div class="formulas" aria-label="Example formulas">
+      <small>the kind of thing you will find on every page</small>
+      <span>V = I R</span>
+      <span>1/v − 1/u = 1/f</span>
+      <span>P = V I</span>
+    </div>
+  </section>
+
+  <section class="sheet" id="quiz" aria-labelledby="quiz-h">
+    <h2 id="quiz-h">Win &#8377;50 off with a quick quiz</h2>
+    <p class="sub">Answer 5 Class 10 Science questions. Get 4 right and you win a coupon code.</p>
+    <div id="quiz-intro">
+      <button class="btn" id="quiz-start" type="button">Start the quiz</button>
+    </div>
+    <form id="quiz-form" autocomplete="off" hidden>
+      <div id="quiz-qs"></div>
+      <p class="coupon-msg" id="quiz-msg" role="status"></p>
+      <button class="btn" type="submit">Check my answers</button>
+    </form>
+    <div id="quiz-result" role="status" hidden>
+      <h3 id="res-title"></h3>
+      <p id="res-text"></p>
+      <div class="reward" id="reward" hidden>
+        <span class="reward-label">Your coupon code</span>
+        <code id="reward-code"></code>
+        <div class="cta-row">
+          <button class="btn" id="use-reward" type="button">Use this coupon</button>
+          <button class="btn ghost" id="copy-reward" type="button">Copy code</button>
+        </div>
+        <p class="note" id="reward-note"></p>
+      </div>
+      <ul class="review" id="review" hidden></ul>
+      <button class="btn ghost" id="retry" type="button" hidden>Try again</button>
+    </div>
+  </section>
+
+  <section class="sheet" id="prices" aria-labelledby="price-h">
+    <h2 id="price-h">Pick your format</h2>
+    <p class="sub">Same notes, two ways to read them.</p>
+    <form class="coupon" id="coupon-form" autocomplete="off">
+      <label for="coupon">Have a coupon code?</label>
+      <div class="coupon-row">
+        <input id="coupon" name="coupon" type="text" autocapitalize="characters" autocomplete="off" spellcheck="false" placeholder="Enter coupon code" maxlength="30">
+        <button class="btn" type="submit">Apply</button>
+      </div>
+      <p class="coupon-msg" id="coupon-msg" role="status">A valid coupon takes &#8377;50 off either format.</p>
+    </form>
+    <div class="plans">
+      <div class="plan" data-kind="PDF" data-base="150">
+        <span class="kind">PDF</span>
+        <div class="price"><s class="was" hidden></s><span><small>&#8377;</small><span class="amt">150</span></span></div>
+        <span class="save" hidden>You save &#8377;50</span>
+        <p class="d">Read on your phone or tablet.</p>
+        <a class="btn order" href="#" target="_blank" rel="noopener">Order the PDF</a>
+      </div>
+      <div class="plan pick" data-kind="printout" data-base="210">
+        <span class="kind">Printout</span>
+        <div class="price"><s class="was" hidden></s><span><small>&#8377;</small><span class="amt">210</span></span></div>
+        <span class="save" hidden>You save &#8377;50</span>
+        <p class="d">A printed copy to mark up and revise from.</p>
+        <a class="btn order" href="#" target="_blank" rel="noopener">Order the printout</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sheet contact" aria-labelledby="contact-h">
+    <h2 id="contact-h">Order today, before the exam rush</h2>
+    <p class="num" id="phone">9427754096</p>
+    <p class="sub">WhatsApp this number with the format you want.</p>
+    <div class="cta-row">
+      <a class="btn wa-general" href="https://wa.me/919427754096?text=Hi%2C%20I%20want%20the%20Class%2010%20Science%20notes." target="_blank" rel="noopener">Message on WhatsApp</a>
+      <button class="btn ghost" id="copy" type="button">Copy number</button>
+    </div>
+    <p class="note" id="copy-note" role="status"></p>
+  </section>
+
+  <footer>Notes by Dhyey Shah &middot; <button class="linkbtn" id="change-address" type="button">Change my city</button></footer>
+
+  <p class="area-note area-bottom">Notes by Dhyey Shah is available only for students living in Bhavnagar, Gujarat.</p>
+</div>
+
+<script>
+(function () {
+  var NUMBER = '919427754096';
+  // Codes are matched without case, spaces, dashes or underscores. Only scrambled (PBKDF2) versions of the
+  // fixed codes are stored here, so those codes cannot be read from the page. Each value is the rupees taken off.
+  var SALT = 'notes-by-dhyey-shah-2026';
+  var ITER = 100000;
+  var ALPHA = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  var PREFIX = 'DHYEYSHAH50';
+  var PASS = 4;
+  var REWARD_OFF = 50;
+  var STORE_KEY = 'notes-by-dhyey-shah-reward';
+  var HASHES = {
+    'f185f83c9a49a12751851269e137fb00c2b7b7ea51ded28388a99b92e673f14a': 50,
+    '4fac21487ce5cc4a4b90096a99f6fc124ff61d03c68625f3d9862ca27002e0a6': 50,
+    'cc02420a215ae1598b199c17f5ae833cf9e239f7dfddaa32f13dd5cad7e3b48a': 50,
+    'cd306a4b417837d90486a6879383d2fd5a53719e84ea1f9b58019a56210e3227': 50,
+    'b0990a537ebec2efea7912f5c67f3ea611b2f7f13f1249758ccdc22939958d5f': 50,
+    'ecc55a418db64065ff1af4fcf4ec4266c7f2c6478479daf564dfbeef647941a8': 50,
+    '8eafbe4e023702a5503bb92abc7f071a34bcb031916a35349a989516d5c44880': 50,
+    '61101c1d359733a8dd2f45999bbb39afc9a122f6ebe85ecc92ba569ef538ba66': 50,
+    '9712484f4e476c399efc4db1ae28ce31af1bb03378d3e2e18dd7f549c99f3b32': 50,
+    'b34073a5d402ccaa5290b861c8a6c95fbd301b17ca68463055f5332853df106e': 50,
+    '71bf47923bc17c9cd26cd576634422bd36149ddc15cc507715afbf8fda1165fa': 50
+  };
+  var applied = '';
+  var off = 0;
+
+  function $(id) { return document.getElementById(id); }
+
+  /* ---------- page 1: city check ---------- */
+  var CITY_KEY = 'notes-by-dhyey-shah-city-name';
+  var CITY_WORDS = ['bhavnagar', 'bhavnager', 'bhavanagar', 'bhavnagr', 'bhaavnagar', 'bhavanager', 'bhavnaagar', '\u0AAD\u0ABE\u0AB5\u0AA8\u0A97\u0AB0'];
+  var gatePage = $('page-gate');
+  var sitePage = $('page-site');
+  var gateMsg = $('gate-msg');
+  var gateForm = $('gate-form');
+  var cityBox = $('city');
+  var decline = $('decline');
+  var address = '';
+
+  function inBhavnagar(text) {
+    var flat = text.toLowerCase().replace(/[^a-z\u0A80-\u0AFF]/g, '');
+    return CITY_WORDS.some(function (w) { return flat.indexOf(w) !== -1; });
+  }
+  function store(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+  function read(k) { try { return localStorage.getItem(k) || ''; } catch (e) { return ''; } }
+  function forget(k) { try { localStorage.removeItem(k); } catch (e) {} }
+  function gateNote(kind, text) { gateMsg.className = 'coupon-msg' + (kind ? ' ' + kind : ''); gateMsg.textContent = text; }
+
+  function openSite() { gatePage.hidden = true; sitePage.hidden = false; window.scrollTo(0, 0); }
+  function openGate(showDecline) {
+    sitePage.hidden = true; gatePage.hidden = false;
+    decline.hidden = !showDecline;
+    window.scrollTo(0, 0);
+  }
+
+  function submitCity() {
+    var text = cityBox.value.trim().replace(/\s+/g, ' ');
+    if (!text) { gateNote('bad', 'Please type your city.'); cityBox.focus(); return; }
+    if (inBhavnagar(text)) {
+      address = 'Bhavnagar';
+      store(CITY_KEY, address);
+      decline.hidden = true;
+      render();
+      openSite();
+    } else {
+      forget(CITY_KEY);
+      address = '';
+      gateNote('', 'We deliver only to students living in Bhavnagar.');
+      openGate(true);
+    }
+  }
+  $('gate-go').addEventListener('click', submitCity);
+  cityBox.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') { e.preventDefault(); submitCity(); }
+  });
+
+  $('change-address').addEventListener('click', function () {
+    forget(CITY_KEY);
+    address = '';
+    cityBox.value = '';
+    gateNote('', 'We deliver only to students living in Bhavnagar.');
+    openGate(false);
+    cityBox.focus();
+  });
+
+  address = read(CITY_KEY) === 'Bhavnagar' ? 'Bhavnagar' : '';
+  if (address) openSite();
+  var plans = Array.prototype.slice.call(document.querySelectorAll('.plan'));
+  var general = Array.prototype.slice.call(document.querySelectorAll('.wa-general'));
+  var form = $('coupon-form');
+  var input = $('coupon');
+  var msg = $('coupon-msg');
+
+  function link(text) { return 'https://wa.me/' + NUMBER + '?text=' + encodeURIComponent(text); }
+
+  function render() {
+    plans.forEach(function (p) {
+      var base = Number(p.getAttribute('data-base'));
+      var kind = p.getAttribute('data-kind');
+      var total = Math.max(base - off, 0);
+      p.querySelector('.amt').textContent = total;
+      var was = p.querySelector('.was');
+      var save = p.querySelector('.save');
+      was.hidden = save.hidden = !off;
+      if (off) { was.textContent = '₹' + base; save.textContent = 'You save ₹' + off; }
+      var text = 'Hi, I want the ' + kind + ' of the Class 10 Science notes (₹' + total + ').';
+      if (off) text = 'Hi, I want the ' + kind + ' of the Class 10 Science notes. Coupon ' + applied + ' (₹' + off + ' off), total ₹' + total + '.';
+      if (address) text += ' I live in ' + address + '.';
+      p.querySelector('.order').setAttribute('href', link(text));
+    });
+    general.forEach(function (a) {
+      var text = 'Hi, I want the Class 10 Science notes.';
+      if (off) text += ' I have coupon ' + applied + '.';
+      if (address) text += ' I live in ' + address + '.';
+      a.setAttribute('href', link(text));
+    });
+  }
+
+  /* ---------- coupon codes ---------- */
+  function hashCode(code) {
+    var enc = new TextEncoder();
+    return crypto.subtle.importKey('raw', enc.encode(code), 'PBKDF2', false, ['deriveBits']).then(function (k) {
+      return crypto.subtle.deriveBits({ name: 'PBKDF2', salt: enc.encode(SALT), iterations: ITER, hash: 'SHA-256' }, k, 256);
+    }).then(function (buf) {
+      return Array.prototype.map.call(new Uint8Array(buf), function (x) { return ('0' + x.toString(16)).slice(-2); }).join('');
+    });
+  }
+
+  // Quiz coupons look like Dhyey_shah_50K7M2-X9Q: four random characters, then three check characters
+  // worked out from them. The page can tell a real quiz coupon without keeping a list of them.
+  function rewardCheck(body) {
+    return hashCode('R:' + body).then(function (hex) {
+      var out = '';
+      for (var i = 0; i < 3; i++) out += ALPHA.charAt(parseInt(hex.substr(i * 2, 2), 16) % 32);
+      return out;
+    });
+  }
+
+  function makeReward() {
+    var a = new Uint8Array(4);
+    crypto.getRandomValues(a);
+    var body = '';
+    for (var i = 0; i < 4; i++) body += ALPHA.charAt(a[i] % 32);
+    return rewardCheck(body).then(function (chk) { return 'Dhyey_shah_50' + body + '-' + chk; });
+  }
+
+  function discountFor(code) {
+    return hashCode(code).then(function (h) {
+      if (Object.prototype.hasOwnProperty.call(HASHES, h)) return HASHES[h];
+      if (code.length === 18 && code.indexOf(PREFIX) === 0) {
+        return rewardCheck(code.slice(11, 15)).then(function (chk) {
+          return chk === code.slice(15) ? REWARD_OFF : 0;
+        });
+      }
+      return 0;
+    });
+  }
+
+  function show(kind, text) { msg.className = 'coupon-msg' + (kind ? ' ' + kind : ''); msg.textContent = text; }
+
+  function checkCoupon(value) {
+    var raw = String(value).trim().toUpperCase();
+    var code = raw.replace(/[^A-Z0-9]/g, '');
+    input.value = raw;
+    if (!code) { applied = ''; off = 0; show('', 'Enter your coupon code to check it.'); render(); return; }
+    discountFor(code).then(function (d) {
+      if (d) {
+        applied = raw; off = d;
+        show('ok', 'Coupon ' + raw + ' applied. ₹' + off + ' off either format. Your order message will include it.');
+      } else {
+        applied = ''; off = 0;
+        show('bad', 'That code is not valid. Check it and try again.');
+      }
+      render();
+    }, function () {
+      show('bad', 'This code could not be checked here. Send it to us on WhatsApp with your order.');
+    });
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    checkCoupon(input.value);
+  });
+
+  /* ---------- copy helper ---------- */
+  function copyText(text, el, noteEl, okText, failText) {
+    function fallback() {
+      try {
+        var r = document.createRange(); r.selectNodeContents(el);
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      } catch (e) {}
+      noteEl.textContent = failText;
+    }
+    try {
+      navigator.clipboard.writeText(text).then(function () { noteEl.textContent = okText; }, fallback);
+    } catch (e) { fallback(); }
+  }
+
+  $('copy').addEventListener('click', function () {
+    copyText('9427754096', $('phone'), $('copy-note'), 'Number copied.', 'Number selected. Press and hold to copy.');
+  });
+
+  /* ---------- quiz ---------- */
+  var QUESTIONS = [
+    { q: 'What is the SI unit of electric resistance?', ok: 'Ohm', bad: ['Ampere', 'Volt', 'Watt'] },
+    { q: 'What is the pH of a neutral solution at room temperature?', ok: '7', bad: ['0', '10', '14'] },
+    { q: 'Which mirror does a dentist use to see enlarged images of teeth?', ok: 'Concave mirror', bad: ['Plane mirror', 'Convex mirror', 'Glass slab'] },
+    { q: 'Which gas do plants release during photosynthesis?', ok: 'Oxygen', bad: ['Carbon dioxide', 'Nitrogen', 'Hydrogen'] },
+    { q: 'Which of these is a chemical change?', ok: 'Rusting of iron', bad: ['Melting of ice', 'Boiling of water', 'Dissolving sugar in water'] },
+    { q: 'Which of these is a good conductor of electricity?', ok: 'Copper', bad: ['Rubber', 'Glass', 'Dry wood'] },
+    { q: 'What is the functional unit of the kidney?', ok: 'Nephron', bad: ['Neuron', 'Alveolus', 'Villus'] },
+    { q: 'Which acid is present in lemon juice?', ok: 'Citric acid', bad: ['Acetic acid', 'Lactic acid', 'Hydrochloric acid'] },
+    { q: 'Which hormone controls the blood sugar level?', ok: 'Insulin', bad: ['Adrenaline', 'Thyroxine', 'Oestrogen'] },
+    { q: 'Which of these is a renewable source of energy?', ok: 'Solar energy', bad: ['Coal', 'Petroleum', 'Natural gas'] },
+    { q: 'What is the SI unit of electric current?', ok: 'Ampere', bad: ['Volt', 'Ohm', 'Watt'] },
+    { q: 'What is the SI unit of electric potential difference?', ok: 'Volt', bad: ['Ampere', 'Joule', 'Coulomb'] },
+    { q: 'The bending of light when it passes from one medium to another is called', ok: 'Refraction', bad: ['Reflection', 'Dispersion', 'Diffraction'] },
+    { q: 'The splitting of white light into its seven colours is called', ok: 'Dispersion', bad: ['Refraction', 'Scattering', 'Reflection'] },
+    { q: 'Which lens is used to correct short-sightedness (myopia)?', ok: 'Concave lens', bad: ['Convex lens', 'Cylindrical lens', 'Plane glass'] },
+    { q: 'Which lens is used to correct long-sightedness (hypermetropia)?', ok: 'Convex lens', bad: ['Concave lens', 'Cylindrical lens', 'Plane glass'] },
+    { q: 'Which part of the human eye controls the amount of light entering it?', ok: 'Iris', bad: ['Cornea', 'Retina', 'Lens'] },
+    { q: 'On which part of the eye is the image formed?', ok: 'Retina', bad: ['Cornea', 'Iris', 'Pupil'] },
+    { q: 'Why does the sky look blue?', ok: 'Scattering of light', bad: ['Reflection of the sea', 'Absorption of light by clouds', 'Dispersion by rain'] },
+    { q: 'Which mirror is used as a rear-view mirror in vehicles?', ok: 'Convex mirror', bad: ['Concave mirror', 'Plane mirror', 'Cylindrical mirror'] },
+    { q: 'What is the direction of the magnetic field outside a bar magnet?', ok: 'From north pole to south pole', bad: ['From south pole to north pole', 'Towards the centre of the magnet', 'There is no field outside'] },
+    { q: 'Which rule gives the direction of force on a current-carrying conductor in a magnetic field?', ok: 'Fleming\'s left-hand rule', bad: ['Fleming\'s right-hand rule', 'Ohm\'s law', 'Snell\'s law'] },
+    { q: 'Which device converts mechanical energy into electrical energy?', ok: 'Electric generator', bad: ['Electric motor', 'Transformer', 'Fuse'] },
+    { q: 'What is the purpose of an electric fuse?', ok: 'To protect the circuit from overloading', bad: ['To increase the current', 'To store charge', 'To reduce voltage'] },
+    { q: 'Which gas layer protects us from the Sun\'s harmful ultraviolet rays?', ok: 'Ozone', bad: ['Oxygen', 'Nitrogen', 'Carbon dioxide'] },
+    { q: 'Which of these is a fossil fuel?', ok: 'Coal', bad: ['Wind', 'Solar energy', 'Geothermal energy'] },
+    { q: 'What is the main constituent of biogas?', ok: 'Methane', bad: ['Ethane', 'Hydrogen', 'Carbon monoxide'] },
+    { q: 'What is the chemical formula of baking soda?', ok: 'NaHCO3', bad: ['Na2CO3', 'NaOH', 'NaCl'] },
+    { q: 'What is the chemical formula of common salt?', ok: 'NaCl', bad: ['NaOH', 'KCl', 'CaCl2'] },
+    { q: 'Which gas is released when zinc reacts with dilute hydrochloric acid?', ok: 'Hydrogen', bad: ['Oxygen', 'Carbon dioxide', 'Chlorine'] },
+    { q: 'Which of these is a strong acid?', ok: 'Hydrochloric acid', bad: ['Acetic acid', 'Citric acid', 'Carbonic acid'] },
+    { q: 'Which of these is a strong base?', ok: 'Sodium hydroxide', bad: ['Ammonium hydroxide', 'Magnesium hydroxide', 'Aluminium hydroxide'] },
+    { q: 'What colour does blue litmus paper turn in an acid?', ok: 'Red', bad: ['Blue', 'Green', 'Yellow'] },
+    { q: 'What is the pH range of acidic solutions?', ok: 'Less than 7', bad: ['More than 7', 'Exactly 7', 'Exactly 14'] },
+    { q: 'Which metal is liquid at room temperature?', ok: 'Mercury', bad: ['Sodium', 'Iron', 'Zinc'] },
+    { q: 'Which non-metal is a good conductor of electricity?', ok: 'Graphite', bad: ['Sulphur', 'Diamond', 'Phosphorus'] },
+    { q: 'Which of these metals is the most reactive?', ok: 'Potassium', bad: ['Zinc', 'Iron', 'Copper'] },
+    { q: 'What is the process of coating iron with a layer of zinc called?', ok: 'Galvanisation', bad: ['Electrolysis', 'Corrosion', 'Alloying'] },
+    { q: 'What is the common name of ethanoic acid?', ok: 'Acetic acid', bad: ['Formic acid', 'Lactic acid', 'Citric acid'] },
+    { q: 'A reaction between an acid and a base that forms salt and water is called', ok: 'Neutralisation', bad: ['Combustion', 'Decomposition', 'Displacement'] },
+    { q: 'In the modern periodic table, elements are arranged in order of increasing', ok: 'Atomic number', bad: ['Atomic mass', 'Number of neutrons', 'Density'] },
+    { q: 'Which gas is released when a metal carbonate reacts with an acid?', ok: 'Carbon dioxide', bad: ['Hydrogen', 'Oxygen', 'Nitrogen'] },
+    { q: 'Which of these is a decomposition reaction?', ok: 'Heating calcium carbonate to give calcium oxide and carbon dioxide', bad: ['Burning of magnesium in air', 'Rusting of iron', 'Zinc reacting with copper sulphate'] },
+    { q: 'Heating which substance at a high temperature gives plaster of Paris?', ok: 'Gypsum', bad: ['Limestone', 'Marble', 'Chalk'] },
+    { q: 'Which organ of the human body makes insulin?', ok: 'Pancreas', bad: ['Liver', 'Kidney', 'Stomach'] },
+    { q: 'Which blood vessel carries blood away from the heart?', ok: 'Artery', bad: ['Vein', 'Capillary', 'Lymph vessel'] },
+    { q: 'How many chambers does the human heart have?', ok: 'Four', bad: ['Two', 'Three', 'Five'] },
+    { q: 'Which pigment gives plants their green colour?', ok: 'Chlorophyll', bad: ['Haemoglobin', 'Melanin', 'Carotene'] },
+    { q: 'Where does photosynthesis mainly take place in a plant cell?', ok: 'Chloroplast', bad: ['Mitochondria', 'Nucleus', 'Ribosome'] },
+    { q: 'Which enzyme in saliva starts the digestion of starch?', ok: 'Salivary amylase', bad: ['Pepsin', 'Trypsin', 'Lipase'] },
+    { q: 'Which hormone is called the emergency hormone?', ok: 'Adrenaline', bad: ['Insulin', 'Thyroxine', 'Growth hormone'] },
+    { q: 'The gap between two neurons is called a', ok: 'Synapse', bad: ['Axon', 'Dendrite', 'Nerve ending'] },
+    { q: 'Which part of the brain controls balance and posture?', ok: 'Cerebellum', bad: ['Cerebrum', 'Medulla', 'Hypothalamus'] },
+    { q: 'Which part of a flower develops into a fruit?', ok: 'Ovary', bad: ['Stamen', 'Petal', 'Sepal'] },
+    { q: 'The transfer of pollen from an anther to a stigma is called', ok: 'Pollination', bad: ['Fertilisation', 'Germination', 'Respiration'] },
+    { q: 'Who is known as the father of genetics?', ok: 'Gregor Mendel', bad: ['Charles Darwin', 'Louis Pasteur', 'Robert Hooke'] },
+    { q: 'Which sex chromosomes does a human male have?', ok: 'XY', bad: ['XX', 'YY', 'XO'] },
+    { q: 'Which of these is a non-biodegradable waste?', ok: 'Plastic bag', bad: ['Vegetable peel', 'Paper', 'Cotton cloth'] },
+    { q: 'In a food chain, the first trophic level is occupied by', ok: 'Producers', bad: ['Herbivores', 'Carnivores', 'Decomposers'] },
+    { q: 'Which organism reproduces by binary fission?', ok: 'Amoeba', bad: ['Hydra', 'Yeast', 'Rhizopus'] }
+  ];
+  var COUNT = 5;
+
+  var quizIntro = $('quiz-intro');
+  var quizForm = $('quiz-form');
+  var quizQs = $('quiz-qs');
+  var quizMsg = $('quiz-msg');
+  var quizResult = $('quiz-result');
+  var current = [];
+
+  function shuffle(list) {
+    var a = list.slice();
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+
+  function quizNote(kind, text) { quizMsg.className = 'coupon-msg' + (kind ? ' ' + kind : ''); quizMsg.textContent = text; }
+
+  function startQuiz() {
+    current = shuffle(QUESTIONS).slice(0, COUNT).map(function (q) {
+      return { q: q.q, ok: q.ok, opts: shuffle([q.ok].concat(q.bad)) };
+    });
+    quizQs.innerHTML = '';
+    current.forEach(function (item, i) {
+      var fs = document.createElement('fieldset');
+      fs.className = 'qfs';
+      var lg = document.createElement('legend');
+      lg.textContent = (i + 1) + '. ' + item.q;
+      fs.appendChild(lg);
+      item.opts.forEach(function (opt, j) {
+        var id = 'q' + i + 'o' + j;
+        var label = document.createElement('label');
+        label.className = 'opt';
+        label.setAttribute('for', id);
+        var r = document.createElement('input');
+        r.type = 'radio'; r.name = 'q' + i; r.id = id; r.value = opt;
+        var t = document.createElement('span');
+        t.textContent = opt;
+        label.appendChild(r); label.appendChild(t);
+        fs.appendChild(label);
+      });
+      quizQs.appendChild(fs);
+    });
+    quizNote('', 'Answer all ' + COUNT + ' questions, then check your answers.');
+    quizIntro.hidden = true;
+    quizResult.hidden = true;
+    quizForm.hidden = false;
+  }
+
+  function showResult(o) {
+    quizForm.hidden = true;
+    quizIntro.hidden = true;
+    quizResult.hidden = false;
+    $('res-title').textContent = o.title;
+    $('res-text').textContent = o.text;
+    $('reward').hidden = !o.code;
+    $('reward-code').textContent = o.code || '';
+    $('reward-note').textContent = '';
+    $('retry').hidden = !!o.code;
+    var list = $('review');
+    list.innerHTML = '';
+    (o.missed || []).forEach(function (m) {
+      var li = document.createElement('li');
+      li.textContent = m.q + ' Correct answer: ' + m.ok + '.';
+      list.appendChild(li);
+    });
+    list.hidden = !(o.missed && o.missed.length);
+  }
+
+  function saveReward(code) { try { localStorage.setItem(STORE_KEY, code); } catch (e) {} }
+  function savedReward() { try { return localStorage.getItem(STORE_KEY) || ''; } catch (e) { return ''; } }
+
+  $('quiz-start').addEventListener('click', startQuiz);
+  $('retry').addEventListener('click', startQuiz);
+
+  quizForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var score = 0;
+    var missed = [];
+    for (var i = 0; i < current.length; i++) {
+      var chosen = quizForm.querySelector('input[name="q' + i + '"]:checked');
+      if (!chosen) { quizNote('bad', 'Answer all ' + COUNT + ' questions first.'); return; }
+      if (chosen.value === current[i].ok) score++;
+      else missed.push({ q: (i + 1) + '. ' + current[i].q, ok: current[i].ok });
+    }
+    if (score >= PASS) {
+      makeReward().then(function (code) {
+        saveReward(code);
+        showResult({ title: 'You scored ' + score + ' out of ' + COUNT, text: 'Well done. You won ₹' + REWARD_OFF + ' off. Here is your coupon code.', code: code, missed: missed });
+      }, function () {
+        quizNote('bad', 'Your coupon could not be made here. Send us a screenshot of your score on WhatsApp.');
+        quizForm.hidden = false;
+      });
+    } else {
+      showResult({ title: 'You scored ' + score + ' out of ' + COUNT, text: 'You need ' + PASS + ' correct answers to win a coupon. Read the answers below and try again.', code: '', missed: missed });
+    }
+  });
+
+  $('use-reward').addEventListener('click', function () {
+    var code = $('reward-code').textContent;
+    checkCoupon(code);
+    form.scrollIntoView();
+  });
+  $('copy-reward').addEventListener('click', function () {
+    copyText($('reward-code').textContent, $('reward-code'), $('reward-note'), 'Code copied.', 'Code selected. Press and hold to copy.');
+  });
+
+  var earlier = savedReward();
+  if (earlier) {
+    showResult({ title: 'Your coupon is ready', text: 'You already won ₹' + REWARD_OFF + ' off on this phone. Here is your coupon code.', code: earlier, missed: [] });
+  }
+
+  render();
+})();
+</script>
+</body>
+</html>
